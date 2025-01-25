@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soumyadip Ghosh - Portfolio</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, rgb(255, 103, 134), rgb(94, 175, 255), rgb(103, 232, 255), rgb(238, 94, 255));
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px 0;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: rgb(255, 255, 255);
+            animation: slideIn 1.5s ease-out;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: rgb(255, 255, 0);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: rgb(255, 103, 134);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about p {
+            font-size: 1.2rem;
+            color: rgb(240, 240, 240);
+            margin-top: 20px;
+        }
+
+        .about-photo {
+            text-align: center;
+            margin-bottom: 1px;
+        }
+
+        .about-photo img {
+            width: 200px;
+            /* Adjust the size of the photo */
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            /* White border around the image */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            /* Optional shadow effect */
+            pointer-events: none;
+            /* Disables interactions like right-click and dragging */
+        }
+
+        /* Project Cards */
+        .project-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem;
+            color: rgb(255, 103, 134);
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: rgb(200, 200, 200);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            color: rgb(255, 103, 134);
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-card a:hover {
+            color: rgb(255, 255, 0);
+        }
+
+        /* Skills Section */
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills li {
+            background-color: rgb(94, 175, 255);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skills li:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact a {
+            color: rgb(255, 103, 134);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: rgb(255, 255, 0);
+        }
+
+        .contact ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .contact li {
+            font-size: 1.2rem;
+            color: rgb(240, 240, 240);
+            margin-bottom: 10px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .contact input[type="submit"] {
+            background-color: rgb(255, 103, 134);
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact input[type="submit"]:hover {
+            background-color: rgb(255, 255, 0);
+        }
+
+        /* Footer Section */
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .skills li {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Soumyadip Ghosh</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-photo">
+            <!-- Disable right-click and dragging on the image -->
+            <img src="my.jpg" alt="Soumyadip Ghosh" oncontextmenu="return false;" draggable="false" />
+        </div>
+        <p>Hi, I'm Soumyadip Ghosh, a passionate beginner coder and aspiring web developer. I enjoy creating interactive
+            and visually appealing web applications and am always looking to learn new technologies to enhance my skill
+            set.</p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Tic Tac Toe Game</h3>
+            <p>A simple, fun web-based Tic Tac Toe game that allows two players to compete in real-time.</p>
+            <a href="https://soumyadip-game.vercel.app" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+            <h3>Simple Snake Game</h3>
+            <p>Play the classic Snake Game where you control the snake to eat food and avoid crashing into walls.</p>
+            <a href="https://soumyadip-snake-game.vercel.app" target="_blank">View Project</a>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to get in touch, feel free to:</p>
+        <ul>
+            <li><strong>Email:</strong> <a
+                    href="mailto:iamsoumyadipghosh@gmail.com?subject=Hello%20Soumyadip&body=Hi%20Soumyadip%2C%0A%0A">iamsoumyadipghosh@gmail.com</a>
+            </li>
+            <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@SoumyadipExplores" target="_blank">Visit My
+                    YouTube Channel</a></li>
+        </ul>
+
+        <h3>Or Send a Message</h3>
+        <form action="https://formspree.io/f/xeoeonwe" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Soumyadip Ghosh. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
